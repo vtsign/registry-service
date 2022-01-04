@@ -24,5 +24,7 @@ WORKDIR /app
 
 EXPOSE 8761
 ENV CONFIG_SERVER_URI=http://localhost:8888
+ENV USERNAME=admin
+ENV PASSWORD=admin
 COPY --from=build /app/target/*.jar ./
 CMD ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/app/registry-service.jar"]
